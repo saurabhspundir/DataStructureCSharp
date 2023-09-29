@@ -76,7 +76,7 @@ namespace DataStructureCSharp.SimpleLinkedList
         {
             Node<T> current = head;
             Node<T> previous = head;
-            Node<T> selected = null;
+            Node<T> selected;
             while (current.next != null)
             {
                 if (current.data.Equals(input))

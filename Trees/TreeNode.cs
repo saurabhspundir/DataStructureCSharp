@@ -1,7 +1,6 @@
 public class TreeNode
 {
-    public int value;
-
-    public TreeNode left;
-    public TreeNode right;
+    public int Value{get;set;}
+    public TreeNode Left{get;set;}
+    public TreeNode Right{get;set;}
 }

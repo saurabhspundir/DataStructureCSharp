@@ -1,11 +1,11 @@
 public class SimpleTree
 {
-    TreeNode _root;
+    private TreeNode _root;
 
     public void AddNode(int input)
     {
         TreeNode current = new TreeNode();
-        current.value=input;
+        current.Value=input;
 
         if (_root==null)
         {
@@ -18,27 +18,27 @@ public class SimpleTree
     private void AddNode(TreeNode parent, TreeNode input)
     {
         //go left
-        if(input.value<=parent.value)
+        if(input.Value<=parent.Value)
         {
-            if(parent.left==null)
+            if(parent.Left==null)
             {
-                parent.left=input;
+                parent.Left=input;
             }
             else
             {
-                AddNode(parent.left,input);
+                AddNode(parent.Left,input);
             }
         }
         //go right
-        if(input.value>parent.value)
+        if(input.Value>parent.Value)
         {
-            if(parent.right==null)
+            if(parent.Right==null)
             {
-                parent.right=input;
+                parent.Right=input;
             }
             else
             {
-                AddNode(parent.right,input);
+                AddNode(parent.Right,input);
             }
         }        
     }
@@ -53,8 +53,8 @@ public class SimpleTree
         {
             return;
         }
-        PrintChildNode(input.left);
-        Console.WriteLine($"{input.value}-->");
-        PrintChildNode(input.right);
+        PrintChildNode(input.Left);
+        Console.WriteLine($"{input.Value}-->");
+        PrintChildNode(input.Right);
     }
 }

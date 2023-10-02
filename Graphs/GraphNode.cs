@@ -1,5 +1,5 @@
 
 public class Vertex
 {
-    public string name;
+    public string Value {get;set;}
 }

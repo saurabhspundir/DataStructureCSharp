@@ -1,8 +1,5 @@
-namespace DataStructureCSharp.SimpleLinkedList
+public class Node<T>
 {
-    public class Node<T>
-    {
-        public T data ;
-        public Node<T> next;
-    }
+    public T Data {get;set;}
+    public Node<T> Next{get;set;}
 }

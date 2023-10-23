@@ -33,29 +33,29 @@ public class Graph
         while (queue.Count > 0)
         {
             // it will bring top most node , as we adding node as visited
-            var sel = queue.Dequeue();
-            Console.WriteLine($"{sel}==>");
+            var current = queue.Dequeue();
+            Console.WriteLine($"{current}==>");
             
             // add all the child nodes of this node. This is way to keep adding  nodes child as we on that node
             //note: if there is no adjuency of the node , that is leaf node
-            if (adjuencyList.ContainsKey(sel))
+            if (adjuencyList.ContainsKey(current))
             {
                 //get all child node    
-                var vertexSelected = adjuencyList[sel];
+                var childVertexes = adjuencyList[current];
 
-                if (vertexSelected != null)
+                if (childVertexes != null)
                 {
                     //traverse child node
-                    for (int i = 0; i < vertexSelected.Count; i++)
+                    for (int i = 0; i < childVertexes.Count; i++)
                     {
-                        var vertexsel = vertexSelected[i].Value;
+                        var childVertex = childVertexes[i].Value;
 
                         // only visit if not visted to avoid infinite loop
-                        if (!visited.Contains(vertexsel))
+                        if (!visited.Contains(childVertex))
                         {
                             //add the node and mark visited
-                            queue.Enqueue(vertexsel);
-                            visited.Add(vertexsel);
+                            queue.Enqueue(childVertex);
+                            visited.Add(childVertex);
                         }
                     }
                 }
@@ -78,29 +78,29 @@ public class Graph
         while (stack.Count > 0)
         {
              // it will bring top most node , as we adding node as visited
-            var sel = stack.Pop();
-            Console.WriteLine($"{sel}==>");
+            var current = stack.Pop();
+            Console.WriteLine($"{current}==>");
 
             // add all the child nodes of this node. This is way to keep adding  nodes child as we on that node
             //note: if there is no adjuency of the node , that is leaf node
-            if (adjuencyList.ContainsKey(sel))
+            if (adjuencyList.ContainsKey(current))
             {
                 //get all child node  
-                var vertexSelected = adjuencyList[sel];
+                var childVertexes = adjuencyList[current];
 
-                if (vertexSelected != null)
+                if (childVertexes != null)
                 {
                    //traverse child node
-                    for (int i = 0; i < vertexSelected.Count; i++)
+                    for (int i = 0; i < childVertexes.Count; i++)
                     {
-                        var vertexsel = vertexSelected[i].Value;
+                        var childVertex = childVertexes[i].Value;
 
                         // only visit if not visted to avoid infinite loop
-                        if (!visited.Contains(vertexsel))
+                        if (!visited.Contains(childVertex))
                         {
                             //add the node and mark visited
-                            stack.Push(vertexsel);
-                            visited.Add(vertexsel);
+                            stack.Push(childVertex);
+                            visited.Add(childVertex);
                         }
                     }
                 }

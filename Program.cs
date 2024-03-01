@@ -7,9 +7,18 @@ internal class Program
         Console.WriteLine("Hello, World!");
         //SimpleLinkedList();
         //TestSimpleTree();
-        TestGraph();
+        //TestGraph();
+        TestTries();
 
         Console.ReadKey();
+    }
+    private static void TestTries()
+    {
+       var t = new Trie();
+        t.Insert("apple");
+        t.Insert("app");
+        t.Insert("bat");
+
     }
 
     private static void TestGraph()

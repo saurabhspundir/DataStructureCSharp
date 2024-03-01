@@ -15,30 +15,30 @@ public class SimpleTree
             AddNode(_root,current);
     }
 
-    private void AddNode(TreeNode parent, TreeNode input)
+    private void AddNode(TreeNode parent, TreeNode child)
     {
         //go left
-        if(input.Value<=parent.Value)
+        if(child.Value<=parent.Value)
         {
             if(parent.Left==null)
             {
-                parent.Left=input;
+                parent.Left=child;
             }
             else
             {
-                AddNode(parent.Left,input);
+                AddNode(parent.Left,child);
             }
         }
         //go right
-        if(input.Value>parent.Value)
+        if(child.Value>parent.Value)
         {
             if(parent.Right==null)
             {
-                parent.Right=input;
+                parent.Right=child;
             }
             else
             {
-                AddNode(parent.Right,input);
+                AddNode(parent.Right,child);
             }
         }        
     }
